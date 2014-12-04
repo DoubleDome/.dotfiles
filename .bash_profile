@@ -1,7 +1,5 @@
 # osX
 #############################################
-# Ask for the administrator password upfront
-sudo -v
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -21,32 +19,47 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+
+# Exports
+#############################################
+# export PATH=/usr/local/bin
+
 # Aliases
 #############################################
 
-#Hello
+#Be polite
+alias please='sudo'
+
+#Hello/ Goodbye
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder;'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder;'
 
-#Be polite
-alias please='sudo'
- 
 ## Use a long listing format ##
 alias ll='ls -l'
 alias lla='ls -la'
 
 #Directory
 alias ~='cd ~'
-alias ..='cd ..'
+alias .='cd ..'
+alias ..='cd ../../'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
-alias .....='cd ../../../../'
 
-#Cleanup
+#Convenience
+alias wor='cd ~/Clients/Citi/WorldOfRewards'
+alias caw='cd ~/Clients/VisitFlorida/caw-banner'
+
+# Utilities
 alias cleanup='sudo npm cache clean; sudo compass clean;'
+alias reload='source ~/.bash_profile'
 
 # Open
 alias o='open'
+
+# NPM
+alias ni='sudo npm install'
+alias nu='sudo npm uninstall'
+alias nl='sudo npm list'
 
 
  
